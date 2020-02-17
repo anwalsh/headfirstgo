@@ -24,13 +24,14 @@ func getGuess() int64 {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Guess a whole number between 1-100:")
 	input, err := reader.ReadString('\n')
+
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "reading standard input: ", err)
 	}
 
 	input = strings.TrimSpace(input)
-
 	guess, err := strconv.ParseInt(input, 10, 64)
+
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "parsing an int: ", err)
 	}
