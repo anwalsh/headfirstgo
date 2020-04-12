@@ -8,4 +8,14 @@ func Hello() string {
 
 func main() {
 	fmt.Println(Hello())
+
+	anon := func() {
+		fmt.Println("Hello from anon!")
+	}
+	anon()
+
+	anon = func() {
+		fmt.Println("Another anon...")
+	}
+	anon()
 }
